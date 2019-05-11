@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="552.0" prefWidth="981.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <VBox prefHeight="542.0" prefWidth="975.0">
+         <children>
+            <Label prefHeight="6.0" prefWidth="878.0" />
+            <HBox prefHeight="558.0" prefWidth="975.0">
+               <children>
+                  <SplitPane dividerPositions="0.21160042964554243" prefHeight="508.0" prefWidth="951.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="262.0">
+                           <children>
+                              <ListView prefHeight="200.0" prefWidth="200.0" />
+                              <VBox layoutX="1.0" prefHeight="508.0" prefWidth="193.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="193.0" text="Danh Mục Mặt Hàng">
+                                       <font>
+                                          <Font name="Calibri Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="listview_category" prefHeight="485.0" prefWidth="193.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="477.0">
+                           <children>
+                              <VBox prefHeight="499.0" prefWidth="731.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="681.0" text="THÔNG TIN CÁC MẶT HÀNG CÓ TRONG CHI NHÁNH">
+                                       <font>
+                                          <Font name="Calibri Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="table_detail" prefHeight="475.0" prefWidth="686.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_id" prefWidth="39.0" resizable="false" text="ID" />
+                                          <TableColumn fx:id="col_inform" prefWidth="171.0" resizable="false" text="Mặt Hàng" />
+                                          <TableColumn fx:id="col_inventory" prefWidth="47.0" resizable="false" text="SL Tồn" />
+                                          <TableColumn fx:id="col_having" prefWidth="73.0" resizable="false" text="SL Đang Có" />
+                                          <TableColumn fx:id="col_price" prefWidth="95.0" resizable="false" text="Gía Bán" />
+                                          <TableColumn fx:id="col_date" maxWidth="144.0" prefWidth="142.0" resizable="false" text="Ngày SX" />
+                                          <TableColumn fx:id="col_expiry" maxWidth="140.0" prefWidth="52.0" resizable="false" text="Hạn SD" />
+                                          <TableColumn fx:id="col_adress" maxWidth="140.0" prefWidth="108.0" resizable="false" text="Xuất Xứ" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </SplitPane>
+               </children>
+            </HBox>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="951.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

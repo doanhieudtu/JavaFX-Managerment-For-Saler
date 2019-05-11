@@ -1,0 +1,11 @@
+
+ .vbox{-fx-background-image: url("../image/sales_alignment.png") ;
+ 	-fx-background-position: center ;
+ }
+ .btn{
+ 	-fx-background-color: #74e4ea;
+ 	-fx-opacity: 80%;  
+}
+.tabpane{
+	-fx-background-color: #74e4ea;
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="536.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ListBillController">
+   <children>
+      <VBox layoutX="-185.0" layoutY="-10.0" prefHeight="545.0" prefWidth="911.0" />
+      <SplitPane dividerPositions="0.355463347164592" layoutY="-5.0" prefHeight="536.0" prefWidth="828.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="284.0">
+               <children>
+                  <VBox prefHeight="493.0" prefWidth="284.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="23.0" prefWidth="287.0" text="Danh Sách Hóa Đơn Trong Ngày">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="list_bill" prefHeight="467.0" prefWidth="269.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="507.0">
+               <children>
+                  <VBox layoutX="1.0" prefHeight="501.0" prefWidth="518.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="13.0" prefWidth="519.0" text="Chi Tiết Hóa Đơn">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table_detail" prefHeight="364.0" prefWidth="401.0">
+                          <columns>
+                            <TableColumn fx:id="colSTT" prefWidth="39.0" text="STT" />
+                            <TableColumn fx:id="colName" prefWidth="151.0" text="Tên Mặt Hàng" />
+                              <TableColumn fx:id="colDVT" minWidth="0.0" prefWidth="87.0" text="Đơn Vị Tính" />
+                              <TableColumn fx:id="colQuantity" minWidth="7.0" prefWidth="75.0" text="Số Lượng" />
+                              <TableColumn fx:id="colPrice" prefWidth="150.0" text="Giá Bán" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets left="5.0" right="20.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox prefHeight="113.0" prefWidth="481.0">
+                           <VBox.margin>
+                              <Insets left="5.0" right="20.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="106.0" prefWidth="241.0">
+                                 <children>
+                                    <HBox prefHeight="27.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="23.0" prefWidth="82.0" text="VAT: " />
+                                          <TextField fx:id="txt_vat" editable="false" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="23.0" prefWidth="82.0" text="Chiết Khấu:  " />
+                                          <TextField fx:id="txt_ck" editable="false" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="34.0" prefHeight="28.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="23.0" prefWidth="82.0" text="Thời Gian Lập:  " />
+                                          <TextField fx:id="txt_time" editable="false" prefHeight="25.0" prefWidth="149.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" prefHeight="115.0" prefWidth="253.0">
+                                 <children>
+                                    <HBox prefHeight="78.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="39.0" prefWidth="73.0" text="Ghi Chú: " />
+                                          <TextArea fx:id="txt_note" editable="false" prefHeight="39.0" prefWidth="186.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="42.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="18.0" prefWidth="79.0" text="Người Lập:" />
+                                          <TextField fx:id="txt_creater" editable="false" prefHeight="25.0" prefWidth="195.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="73.0" prefHeight="42.0" prefWidth="241.0">
+                                       <children>
+                                          <Label prefHeight="18.0" prefWidth="78.0" text="Tổng Tiền:" />
+                                          <TextField fx:id="txt_total" editable="false" prefHeight="25.0" prefWidth="194.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </AnchorPane>
+        </items>
+         <padding>
+            <Insets bottom="10.0" left="20.0" top="10.0" />
+         </padding>
+      </SplitPane>
+   </children>
+</AnchorPane>

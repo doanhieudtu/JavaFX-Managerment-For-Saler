@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="746.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.IndexController">
+   <tabs>
+      <Tab text="Hệ Thống">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+         </content>
+      </Tab>
+      <Tab id="tabPaneSale" style="-fx-background-color: #74e4ea;" text="Bán Hàng">
+         <content>
+            <VBox prefHeight="702.0" prefWidth="1300.0" style="-fx-background-color: #63CCBB;">
+               <children>
+                  <FlowPane prefHeight="90.0" prefWidth="1300.0" style="-fx-background-color: #63CCBB;">
+                     <children>
+                        <Button fx:id="btnCreateBill" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" opacity="0.8" prefHeight="80.0" prefWidth="102.0">
+                           <FlowPane.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="btnBill" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#getListBill" opacity="0.8" prefHeight="79.0" prefWidth="126.0">
+                           <FlowPane.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="btnReport" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#getDetailProducts" prefHeight="79.0" prefWidth="135.0">
+                           <FlowPane.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <AnchorPane prefHeight="85.0" prefWidth="861.0">
+                           <children>
+                              <Label layoutX="573.0" layoutY="14.0" text="Tên Nhân Viên: " />
+                              <Label layoutX="573.0" layoutY="34.0" prefHeight="17.0" prefWidth="80.0" text="Chi Nhánh: " />
+                              <Label fx:id="lbStaff" layoutX="664.0" layoutY="14.0" prefHeight="17.0" prefWidth="199.0" />
+                              <Label fx:id="lbBranch" layoutX="664.0" layoutY="34.0" prefHeight="18.0" prefWidth="196.0" />
+                              <Button fx:id="btnLogout" layoutX="484.0" layoutY="9.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="49.0" />
+                           </children></AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </FlowPane>
+                  <BorderPane prefHeight="596.0" prefWidth="1300.0" style="-fx-background-color: #DDDDDD;">
+                     <right>
+                        <VBox prefHeight="500.0" prefWidth="308.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="567.0" prefWidth="282.0">
+                                 <children>
+                                    <HBox prefHeight="36.0" prefWidth="298.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="VAT" />
+                                          <TextField fx:id="txt_id_vat" onAction="#bonusVAT" prefHeight="36.0" prefWidth="164.0">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin></TextField>
+                                          <Label prefHeight="35.0" prefWidth="27.0" text=" %" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="33.0" prefWidth="308.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="Chiết Khấu:  " />
+                                          <TextField fx:id="txt_ck" onAction="#subCK" prefHeight="33.0" prefWidth="164.0" />
+                                          <Label prefHeight="34.0" prefWidth="34.0" text=" %" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="33.0" prefWidth="308.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="Ngày Lập:  " />
+                                          <TextField fx:id="txt_create_date" editable="false" prefHeight="33.0" prefWidth="165.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="20.0" layoutY="43.0" prefHeight="214.0" prefWidth="293.0">
+                                       <children>
+                                          <HBox prefHeight="214.0" prefWidth="289.0">
+                                             <children>
+                                                <VBox prefHeight="214.0" prefWidth="249.0">
+                                                   <children>
+                                                      <Label prefHeight="25.0" prefWidth="252.0" text="Ghi Chú" />
+                                                      <TextArea fx:id="txt_note" prefHeight="188.0" prefWidth="241.0" />
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="33.0" prefWidth="308.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="Khách Đưa:  " />
+                                          <TextField fx:id="txt_begin" onAction="#pay" prefHeight="33.0" prefWidth="166.0" />
+                                          <Label prefHeight="34.0" prefWidth="31.0" text=" VNĐ" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="33.0" prefWidth="308.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="Tông Tiền:   " />
+                                          <TextField fx:id="txt_total" editable="false" prefHeight="33.0" prefWidth="167.0" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" text="VNĐ" textAlignment="CENTER" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="33.0" prefWidth="308.0">
+                                       <children>
+                                          <Label prefHeight="33.0" prefWidth="88.0" text="Tiền Thừa:   " />
+                                          <TextField fx:id="txt_remain" editable="false" prefHeight="30.0" prefWidth="168.0" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="33.0" text="VNĐ" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="48.0" prefWidth="293.0">
+                                       <children>
+                                          <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#DeleteBill" prefHeight="42.0" prefWidth="42.0" />
+                                          <Button fx:id="btnSave" mnemonicParsing="false" onAction="#SaveBill" prefHeight="42.0" prefWidth="42.0">
+                                             <HBox.margin>
+                                                <Insets left="25.0" right="25.0" />
+                                             </HBox.margin></Button>
+                                          <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#CreateBill" prefHeight="42.0" prefWidth="42.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="76.0" prefHeight="33.0" prefWidth="308.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children></VBox>
+                     </right>
+                     <bottom>
+                        <AnchorPane prefHeight="0.0" prefWidth="1300.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <left>
+                       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label alignment="CENTER" prefHeight="18.0" prefWidth="253.0" style="-fx-background-color: white;" text="Tìm Kiếm Sản Phẩm">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <HBox fx:id="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="555.0" prefWidth="433.0">
+         <children>
+            <VBox prefHeight="515.0" prefWidth="258.0">
+               <children>
+                  <TextField fx:id="txt_content" onAction="#Search" onInputMethodTextChanged="#onTextChanged" prefHeight="37.0" prefWidth="259.0" promptText=" nhập (mã hoặc tên mặt hàng)">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </TextField>
+                  <ListView fx:id="listViewProduct" maxHeight="1.7976931348623157E308" prefHeight="523.0" prefWidth="253.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </ListView>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="110.0">
+               <children>
+                  <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#Search" prefHeight="36.0" prefWidth="99.0" />
+                  <Button fx:id="btnAll" mnemonicParsing="false" onAction="#addAll" prefHeight="28.0" prefWidth="99.0" text="Chọn Hết">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="120.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+</VBox>
+                       
+                     </left>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="tableProduct" prefHeight="521.0" prefWidth="559.0" style="-fx-background-color: white;">
+                                 <columns>
+                                    <TableColumn fx:id="colSTT" prefWidth="39.0" text="STT" />
+                                    <TableColumn fx:id="colName" prefWidth="191.0" text="Tên Mặt Hàng" />
+                                    <TableColumn fx:id="colDVT" prefWidth="98.0" text="Đơn Vị Tính" />
+                                    <TableColumn fx:id="colQuantity" prefWidth="94.0" text="Số Lượng " />
+                                    <TableColumn fx:id="colPrice" prefWidth="146.0" text="Gía Bán" />
+                                 </columns>
+                              </TableView>
+                              <Button fx:id="btn_delete_item" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
